@@ -87,6 +87,7 @@ def text2graph_worker(i, df, use_cd=True, print_fig=False):
 
 def extract_graphs_from_data(infile, use_cd=True, parallel=True, extract_range=None, print_fig=False):
     """
+    从csv文件中提取
     """
     df = pd.read_csv(infile, sep="|", quotechar='\"', quoting=csv.QUOTE_ALL)  # , nrows=100)
     gs = []
@@ -178,8 +179,9 @@ def save_graph_features_to_file(gs, outfile, draw_fig=False):
 def dataset2featurefile(infile, outfile, use_cd=False,
                         parallel=True, extract_range=None, draw_fig=False, print_fig=False):
     """
+    
     """
-    gs = extract_graphs_from_data(infile, use_cd, parallel, extract_range, print_fig)
+    gs = extract_graphs_from_data(infile, use_cd, parallel, extract_range, print_fig)#graphs
     save_graph_features_to_file(gs, outfile, draw_fig)
 
 
